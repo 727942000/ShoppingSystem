@@ -1,0 +1,4 @@
+ID password name sex phoneNumber address
+1001 10011 马丽 女 114514 法国
+1002 10022 李克 男 138897 中国
+1003 10033 艾瑞克 男 456789 德国
