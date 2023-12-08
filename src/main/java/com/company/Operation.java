@@ -1,4 +1,4 @@
-package main.java.com.company;
+package com.company;
 
 import java.util.List;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 public interface Operation {
     String BuyerAddr = ""; //买家表地址
     String SellerAddr = ""; //卖家表地址
-    String Administrator = "D:\\Java\\ideaIC-2021.3.1.win\\购物系统--数据库大作业\\src\\com\\company\\Administrator.txt"; //管理员表地址
+    String Administrator = "D:\\Java\\ideaIC-2021.3.1.win\\购物系统--数据库大作业\\src\\main\\java\\com\\company\\Administrator.txt";//管理员表地址
     String GoodsAddr = "";//商品表地址
 
     //信息搜索

@@ -1,4 +1,4 @@
-package main.java.com.company;
+package com.company;
 
 public class StatusOfGoods {
     public final static String OnSale = "在售";

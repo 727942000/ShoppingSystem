@@ -1,4 +1,4 @@
-package main.java.com.company;
+package com.company;
 
 public class Administrator extends Person{
     public Administrator(EventName en) {
