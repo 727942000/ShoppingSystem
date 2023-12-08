@@ -1,4 +1,4 @@
-package com.company;
+package main.java.com.company;
 
 public enum EventName {
     Buyer,

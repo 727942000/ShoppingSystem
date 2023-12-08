@@ -1,4 +1,4 @@
-package com.company;
+package main.java.com.company;
 
 public class Sex {
     public final static String male = "男";
