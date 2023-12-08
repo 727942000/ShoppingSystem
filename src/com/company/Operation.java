@@ -11,6 +11,8 @@ public interface Operation {
 
     //信息搜索
     //字符串方式
+    void SayHello(String hello);
+
     Map<Integer, List<String>> Select(EventName en,String str);
     //ID方式
     Map<Integer, List<String>> Select(EventName en,int ID);
@@ -22,7 +24,6 @@ public interface Operation {
     Boolean Update(EventName en,int ID,List<String> list);
 
     Boolean Add(EventName en,int ID,List<String> list);
-
     //删除只需两个参数
     Boolean Delect(EventName en,int ID);
 }

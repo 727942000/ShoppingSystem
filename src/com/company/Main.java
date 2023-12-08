@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+
+
+
 	// write your code here
         System.out.println("你的角色是:");
         System.out.println("1.买家");
@@ -38,7 +42,6 @@ public class Main {
                 break;
             default:
                 System.out.println("输入不正确");
-                return;
         }
     }
 }
