@@ -1,5 +1,8 @@
 package com.company;
 
-public class Seller {
+public class Seller extends Person{
+    public Seller(EventName en){
+        this.en = en;
+    }
 
 }

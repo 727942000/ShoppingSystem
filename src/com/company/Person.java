@@ -12,7 +12,8 @@ public class Person {
     public String sex;
     public String phoneNumber;
     public String address;
-    private EventName en;
+    public EventName en;
+    public String pathname;
     private Map<Integer,List<String>> map;
     private List<String> list;
 
@@ -22,7 +23,7 @@ public class Person {
     }
 
     public Map<Integer, List<String>> Select(EventName en,int id){
-        String pathname = "D:\\Java\\ideaIC-2021.3.1.win\\购物系统--数据库大作业\\src\\com\\company\\Administrator.txt"; // 绝对路径或相对路径都可以，写入文件时演示相对路径,读取以上路径的input.txt文件
+        String pathname = this.pathname; // 绝对路径或相对路径都可以，写入文件时演示相对路径,读取以上路径的input.txt文件
         //防止文件建立或读取失败，用catch捕捉错误并打印，也可以throw;
         //不关闭文件会导致资源的泄露，读写文件都同理
         //Java7的try-with-resources可以优雅关闭文件，异常时自动关闭文件；详细解读https://stackoverflow.com/a/12665271
@@ -55,7 +56,7 @@ public class Person {
         return null;
     }
     private boolean Select(EventName en1,EventName en2,int id){
-        String pathname = "D:\\Java\\ideaIC-2021.3.1.win\\购物系统--数据库大作业\\src\\com\\company\\Administrator.txt"; // 绝对路径或相对路径都可以，写入文件时演示相对路径,读取以上路径的input.txt文件
+        String pathname = this.pathname; // 绝对路径或相对路径都可以，写入文件时演示相对路径,读取以上路径的input.txt文件
         //防止文件建立或读取失败，用catch捕捉错误并打印，也可以throw;
         //不关闭文件会导致资源的泄露，读写文件都同理
         //Java7的try-with-resources可以优雅关闭文件，异常时自动关闭文件；详细解读https://stackoverflow.com/a/12665271
@@ -127,6 +128,38 @@ public class Person {
                 break;
             default:
                 System.out.println("身份 :" + "管理员");
+        }
+    }
+    public void Operate(){
+        boolean flag = true;
+        while(flag){
+            System.out.println("请输入你的操作");
+            System.out.println("1.搜买家");
+            System.out.println("2.搜卖家");
+            System.out.println("3.搜商品");
+            System.out.println("4.更改个人信息");
+            System.out.println("5.退出");
+            Scanner sc = new Scanner(System.in);
+            int operation = sc.nextInt();
+            switch (operation){
+                case 1:
+                    var buyInfo = sc.next();
+                    if(buyInfo.charAt(0) > 47 && buyInfo.charAt(0) < 50){
+                        Select(EventName.Buyer,Integer.valueOf(buyInfo));
+                    }
+                    else{
+                        Select(EventName.Buyer,buyInfo);
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    flag = false;
+            }
         }
     }
 
