@@ -55,8 +55,9 @@ public class AllOperation implements Operation {
                     break;
                 case Orders:
                     tableName = "orders";
-                    where.append(" o_id=");
-                    where.append(String.valueOf(ID));
+                    where.setLength(0);
+//                    where.append(" o_id=");
+//                    where.append(String.valueOf(ID));
                     break;
                 case Address:
                     tableName = "address";
@@ -144,6 +145,7 @@ public class AllOperation implements Operation {
                 case Orders:
                     while (resultSet.next()){
                         int id = resultSet.getInt("o_id");
+                        int p_id = resultSet.getInt("p_id");
                         int u_id = resultSet.getInt("u_id");
                         int a_id = resultSet.getInt("a_id");
                         String name = resultSet.getString("o_name");
@@ -151,6 +153,7 @@ public class AllOperation implements Operation {
                         String price = resultSet.getString("o_price");
                         String state = resultSet.getString("o_state");
                         list.add(String.valueOf(id));
+                        list.add(String.valueOf(p_id));
                         list.add(String.valueOf(u_id));
                         list.add(String.valueOf(a_id));
                         list.add(name);

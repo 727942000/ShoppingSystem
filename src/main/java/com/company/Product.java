@@ -20,12 +20,7 @@ public class Product {
     public Product(){
         ap = new AllOperation();
     }
-    public boolean selectProduct(){
-            System.out.println("用商品编号或商品名搜索");
-            Scanner scanner = new Scanner(System.in);
-            StringBuilder sb = new StringBuilder();
-            //scanner.nextLine();
-            sb.append(scanner.nextLine());
+    public boolean selectProduct(StringBuilder sb){
             map = ap.Select(EventName.Product,sb.toString());
             for(int k : map.keySet()){
                 this.ID = k;

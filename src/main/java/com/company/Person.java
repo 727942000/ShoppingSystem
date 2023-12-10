@@ -124,57 +124,13 @@ public class Person {
             boolean _flag = true;
             switch (operation){
                 case 1:
-                    _flag =true;
-                    Buyer buyer = new Buyer(EventName.Buyer);
-                    while (_flag) {
-                        System.out.println("使用账号或者用户名检索");
-                        var ch = sc.nextLine();
-                        var buyInfo = sc.nextLine();
-                        if (buyInfo.length()>0 && buyInfo.charAt(0) > 47 && buyInfo.charAt(0) < 59) {
-                            if (!buyer.Verify(Integer.parseInt(buyInfo))) {
-                                continue;
-                            }
-                        } else {
-                            if(!buyer.Verify(buyInfo)){
-                                continue;
-                            }
-                        }
-                        _flag = false;
-                    }
-                    buyer.Init();
-                    buyer.Show();
+                    caseBuyer();
                     break;
                 case 2:
-                    _flag=true;
-                    Seller seller = new Seller(EventName.Seller);
-                    while (_flag) {
-                        System.out.println("使用账号或者用户名检索");
-                        var ch = sc.nextLine();
-                        var buyInfo = sc.nextLine();
-                        if (buyInfo.length()>0 && buyInfo.charAt(0) > 47 && buyInfo.charAt(0) < 59) {
-                            if (!seller.Verify(Integer.parseInt(buyInfo))) {
-                                continue;
-                            }
-                        } else {
-                            if(!seller.Verify(buyInfo)){
-                                continue;
-                            }
-                        }
-                        _flag = false;
-                    }
-                    seller.Init();
-                    seller.Show();
+                    caseSeller();
                     break;
                 case 3:
-                    _flag = true;
-                    while (_flag){
-                        Product product = new Product();
-                        if(product.selectProduct()){
-                            product.productInit();
-                            product.Show();
-                            _flag = false;
-                        }
-                    }
+                    caseProduct();
                     break;
                 case 4:
                     break;
@@ -184,5 +140,65 @@ public class Person {
         }
     }
 
+    public void caseBuyer(){
+        boolean _flag =true;
+        Scanner sc = new Scanner(System.in);
+        Buyer buyer = new Buyer(EventName.Buyer);
+        while (_flag) {
+            System.out.println("使用账号或者用户名检索");
+            var ch = sc.nextLine();
+            var buyInfo = sc.nextLine();
+            if (buyInfo.length()>0 && buyInfo.charAt(0) > 47 && buyInfo.charAt(0) < 59) {
+                if (!buyer.Verify(Integer.parseInt(buyInfo))) {
+                    continue;
+                }
+            } else {
+                if(!buyer.Verify(buyInfo)){
+                    continue;
+                }
+            }
+            _flag = false;
+        }
+        buyer.Init();
+        buyer.Show();
+    }
+    public void caseSeller(){
+        Boolean _flag=true;
+        Scanner sc = new Scanner(System.in);
+        Seller seller = new Seller(EventName.Seller);
+        while (_flag) {
+            System.out.println("使用账号或者用户名检索");
+            var ch = sc.nextLine();
+            var buyInfo = sc.nextLine();
+            if (buyInfo.length()>0 && buyInfo.charAt(0) > 47 && buyInfo.charAt(0) < 59) {
+                if (!seller.Verify(Integer.parseInt(buyInfo))) {
+                    continue;
+                }
+            } else {
+                if(!seller.Verify(buyInfo)){
+                    continue;
+                }
+            }
+            _flag = false;
+        }
+        seller.Init();
+        seller.Show();
+    }
+    public void caseProduct(){
+        boolean _flag = true;
+        while (_flag){
+            System.out.println("用商品编号或商品名搜索");
+            Scanner scanner = new Scanner(System.in);
+            StringBuilder sb = new StringBuilder();
+            //scanner.nextLine();
+            sb.append(scanner.nextLine());
+            Product product = new Product();
+            if(product.selectProduct(sb)){
+                product.productInit();
+                product.Show();
+                _flag = false;
+            }
+        }
+    }
 
 }
