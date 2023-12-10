@@ -20,6 +20,7 @@ public class Main {
                 buyer.Verify();
                 buyer.Init();
                 buyer.Show();
+                buyer.Operate();
                 break;
             case 2:
                 System.out.println("2.卖家");
@@ -27,6 +28,7 @@ public class Main {
                 seller.Verify();
                 seller.Init();
                 seller.Show();
+                seller.Operate();
                 break;
             case 3:
                 System.out.println("3.管理员");
@@ -35,6 +37,7 @@ public class Main {
                 administrator.Verify();
                 administrator.Init();
                 administrator.Show();
+                administrator.Operate();
                 break;
             default:
                 System.out.println("输入不正确");

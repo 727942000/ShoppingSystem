@@ -6,7 +6,7 @@ public enum EventName {
     Administrator,
     ID,
     Name,
-    Goods,
+    Product,
     Orders,
     Address,
     Type,

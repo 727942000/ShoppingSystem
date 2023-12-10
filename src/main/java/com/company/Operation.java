@@ -14,7 +14,7 @@ public interface Operation {
     String GoodsAddr = "";//商品表地址
 
     //信息搜索
-    //Map<Integer, List<String>> Select(EventName en,String str);
+    Map<Integer, List<String>> Select(EventName en,String _name);
     //ID方式
     Map<Integer, List<String>> Select(EventName en,int ID);
 
