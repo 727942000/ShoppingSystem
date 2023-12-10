@@ -4,13 +4,10 @@ public enum EventName {
     Buyer,
     Seller,
     Administrator,
-    ID,
-    Name,
     Product,
     Orders,
     Address,
-    Type,
     Cart,
+    Type,
     Item,
-
 }
