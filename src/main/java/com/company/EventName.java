@@ -5,5 +5,6 @@ public enum EventName {
     Seller,
     Administrator,
     ID,
+    Name,
     Goods
 }
