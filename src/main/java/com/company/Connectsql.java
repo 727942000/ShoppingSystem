@@ -40,6 +40,15 @@ public class Connectsql {
 
         return conn;
     };
+    public void closeConn(Connection conn){
+        if (conn!=null){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 //    public static void main(String[] args) {
 //        getConnect("root","123456");
 //    }
