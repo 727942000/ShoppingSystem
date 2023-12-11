@@ -489,7 +489,7 @@ public class AllOperation implements Operation {
         //ap.Select(EventName.Seller,"黎云熙");
         //ap.insertCart(8,8,8,8);
         //ap.deleteCart(35802);
-        ap.updateCart(35803,1,1,1,1);
+        //ap.updateCart(35803,1,1,1,1);
     }
 
 
