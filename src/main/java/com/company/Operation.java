@@ -18,13 +18,15 @@ public interface Operation {
     //ID方式
     Map<Integer, List<String>> Select(EventName en,int ID);
 
-    //登录时账号/密码搜索 第一个参数为 Operation.ID 第二个参数为操作对象(买家/卖家/管理员),返回值代表ID是否在表中
-    //Map<Integer, List<String>> Select(EventName en1,EventName en2,int ID);
 
     //三个参数分别为操作对象(买家/卖家/管理员)，对象id和更改内容
     //Boolean Update(EventName en,int ID,List<String> list);
+    // 增
 
+    Boolean insertCart(int u_id,int p_id,float c_count,int c_num);
     //Boolean Add(EventName en,int ID,List<String> list);
     //删除只需两个参数
-    //Boolean Delect(EventName en,int ID);
+    Boolean deleteCart(int ID);
+
+    Boolean updateCart(int c_id,int u_id,int p_id,float c_count,int c_num);
 }

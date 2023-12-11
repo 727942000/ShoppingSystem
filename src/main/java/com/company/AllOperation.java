@@ -64,7 +64,7 @@ public class AllOperation implements Operation {
                     where.append(" a_id=");
                     where.append(String.valueOf(ID));
                     break;
-                case Cart:
+                case cart:
                     tableName = "cart";
                     where.append(" c_id=");
                     where.append(String.valueOf(ID));
@@ -197,7 +197,7 @@ public class AllOperation implements Operation {
                         System.out.println(id+" "+name);
                     }
                     break;
-                case Cart:
+                case cart:
                     while (resultSet.next()){
                         int id = resultSet.getInt("c_id");
                         int u_id = resultSet.getInt("u_id");
@@ -408,8 +408,89 @@ public class AllOperation implements Operation {
         cs.closeConn(conn);
         return map;
     }
+
+    //对购物车的操作
+    public Boolean insertCart(int u_id,int p_id,float c_count,int c_num){
+        StringBuilder sb = new StringBuilder("insert into "+EventName.cart +"(u_id,p_id,c_count,c_num) values(?,?,?,?)");
+
+        System.out.println(sb);
+        Connection conn = cs.getConnect(Operation.userName,Operation.userPassWd);
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(sb.toString());
+            preparedStatement.setInt(1,u_id);
+            preparedStatement.setInt(2,p_id);
+            preparedStatement.setFloat(3,c_count);
+            preparedStatement.setInt(4,c_num);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        cs.closeConn(conn);
+        System.out.println("Insert succeed");
+        return true;
+
+    }
+
+    public Boolean deleteCart(int c_id){
+        Connection conn = cs.getConnect(Operation.userName,Operation.userPassWd);
+        StringBuilder sb = new StringBuilder("DELETE FROM ");
+
+        //表的名字
+        sb.append(EventName.cart);
+
+        //WHERE
+        sb.append(" WHERE c_id = ?");
+
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(sb.toString());
+
+            //占位值填充
+            preparedStatement.setInt(1,c_id);
+
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        cs.closeConn(conn);
+        System.out.println("Delete Succeed!");
+        return true;
+    }
+
+    public Boolean updateCart(int c_id,int u_id,int p_id,float c_count,int c_num){
+        //"UPDATE table_name SET column1 = ? WHERE column2 = ?"
+        //StringBuilder sb = new StringBuilder("UPDATE "+EventName.cart +" SET u_id = ?,p_id = ?,c_count=?,c_num=? WHERE c_id=?");
+        StringBuilder sb = new StringBuilder("UPDATE ");
+        sb.append(EventName.cart);
+        sb.append(" SET u_id = ?,p_id = ?,c_count=?,c_num=? WHERE c_id=?");
+        System.out.println(sb);
+        Connection conn = cs.getConnect(Operation.userName,Operation.userPassWd);
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(sb.toString());
+            preparedStatement.setInt(1,u_id);
+            preparedStatement.setInt(2,p_id);
+            preparedStatement.setFloat(3,c_count);
+            preparedStatement.setInt(4,c_num);
+            preparedStatement.setInt(5,c_id);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        cs.closeConn(conn);
+        System.out.println("update succeed");
+        return true;
+    }
+
     public static void main(String[] args) {
         AllOperation ap = new AllOperation();
-        ap.Select(EventName.Seller,"黎云熙");
+        //ap.Select(EventName.Seller,"黎云熙");
+        //ap.insertCart(8,8,8,8);
+        //ap.deleteCart(35802);
+        ap.updateCart(35803,1,1,1,1);
     }
+
+
 }

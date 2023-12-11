@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -20,10 +20,7 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="99eb74ce-d87e-48eb-b10d-12a9fb1e5257" object-ref="schemas/shop/tables/address" />
-      <object connection-id="99eb74ce-d87e-48eb-b10d-12a9fb1e5257" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="99eb74ce-d87e-48eb-b10d-12a9fb1e5257" dataset="shop.address" active-filter-id="34e0b88f-c62a-49a3-804c-070527ce460b">
@@ -32,9 +29,15 @@
       </filter>
     </filter-actions>
   </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ParserDiagnosticsManager">
+    <diagnostics-history />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>

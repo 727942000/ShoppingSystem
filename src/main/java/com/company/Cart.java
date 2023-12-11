@@ -2,7 +2,6 @@ package com.company;
 
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 
 public class Cart {
     public int ID;
@@ -15,7 +14,7 @@ public class Cart {
     }
 
     public Boolean cartSelect(){
-        map = ap.Select(EventName.Cart,null);
+        map = ap.Select(EventName.cart,null);
         for(int k : map.keySet()){
             this.ID = k;
             return true;

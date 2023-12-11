@@ -7,7 +7,7 @@ public enum EventName {
     Product,
     Orders,
     Address,
-    Cart,
+    cart,
     Type,
     Item,
 }
